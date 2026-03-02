@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Age Calculator Pro</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#26205c">
+
+  <!-- iOS support -->
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="AgeCalc">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+
+<body>
+
+  <!-- ============ Splash Screen ============ -->
+  <div id="splash">
+    <h1>
+      <i class="fa-solid fa-calendar-days"></i>
+      AgeCalc
+    </h1>
+    <p>Loading...</p>
+  </div>
+
+
+  <!-- ============ Main Card ============ -->
+  <div class="card">
+
+    <!-- Header -->
+    <div class="top">
+      <h2>
+        <i class="fa-solid fa-calendar-days"></i>
+        Age Calculator Pro
+      </h2>
+
+      <button id="themeBtn" title="Toggle Theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+
+
+    <!-- DOB Input -->
+    <input type="date" id="dob" />
+
+
+    <hr>
+
+
+    <!-- Compare Section -->
+    <h3>
+      <i class="fa-solid fa-people-arrows"></i>
+      Compare Ages (Optional)
+    </h3>
+
+    <input type="date" id="dob2" />
+
+    <button id="compareBtn">
+      <i class="fa-solid fa-people-arrows"></i>
+      Compare Ages
+    </button>
+
+    <div id="compareResult" class="result hidden"></div>
+
+
+    <!-- Calculate -->
+    <button id="calcBtn">
+      <i class="fa-solid fa-calculator"></i>
+      Calculate Age
+    </button>
+
+
+    <!-- Messages -->
+    <p id="error" class="error"></p>
+    <div id="result" class="result hidden"></div>
+
+  </div>
+
+
+  <!-- Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

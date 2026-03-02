@@ -1,0 +1,199 @@
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+
+/* ===== THEME COLORS ===== */
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --text:#1f2937;
+  --border:#e5e7eb;
+  --primary:#2563eb;
+  --danger:#ef4444;
+}
+
+/* ===== DARK MODE ===== */
+.dark{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#f1f5f9;
+  --border:#334155;
+  --primary:#3b82f6;
+}
+
+
+/* ===== BODY ===== */
+body{
+  min-height:100vh;
+  background:var(--bg);
+
+  display:flex;
+  justify-content:center;
+
+  padding:40px 12px;   /* space top/bottom */
+  overflow-y:auto;     /* allow scrolling */
+}
+
+
+/* ===== CARD ===== */
+.card{
+  width:95%;
+   max-height:90vh;
+  overflow-y:auto;
+  max-width:420px;
+  padding:28px;
+  border-radius:16px;
+  background:var(--card);
+  color:var(--text);
+  border:1px solid var(--border);
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+
+/* ===== HEADER ===== */
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+h2{
+  font-size:18px;
+  font-weight:600;
+}
+
+
+/* ===== INPUT ===== */
+input{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text);
+  font-size:14px;
+}
+
+
+/* ===== BUTTON ===== */
+button{
+  width:100%;
+  padding:12px;
+  margin-top:8px;
+  border-radius:10px;
+  border:none;
+  background:var(--primary);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:.2s;
+}
+
+button:hover{
+  opacity:.92;
+  transform:translateY(-1px);
+}
+
+/* small theme button */
+#themeBtn{
+  width:auto;
+  padding:6px 10px;
+}
+
+
+/* ===== RESULT BOX ===== */
+.result{
+  margin-top:15px;
+  padding:12px;
+  border-radius:10px;
+  background:rgba(0,0,0,.03);
+  line-height:1.7;
+  font-size:14px;
+}
+
+.dark .result{
+  background:rgba(255,255,255,.05);
+}
+
+
+/* ===== ERROR ===== */
+.error{
+  color:var(--danger);
+  font-size:13px;
+}
+
+
+/* ===== HIDDEN ===== */
+.hidden{
+  display:none;
+}
+
+
+/* ===== HR ===== */
+hr{
+  margin:20px 0;
+  border:none;
+  height:1px;
+  background:var(--border);
+}
+
+
+/* ===== SPLASH ===== */
+#splash{
+  position:fixed;
+  inset:0;
+  background:var(--bg);
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  font-size:22px;
+  z-index:9999;
+  animation:fadeOut .6s ease 1.6s forwards;
+}
+
+@keyframes fadeOut{
+  to{
+    opacity:0;
+    visibility:hidden;
+  }
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:500px){
+  .card{
+    padding:20px;
+  }
+}
+i{
+  margin-right:8px;
+  font-size:14px;
+  opacity:.85;
+}
+
+button i{
+  margin-right:6px;
+}
+/* Splash heading */
+#splash h1{
+  font-size:38px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* Make icon SAME size as text */
+#splash h1 i{
+  font-size:1em;   /* equals heading size */
+}
