@@ -1,7 +1,10 @@
 
-# Age Calculator Pro
+## Age Calculator Pro
 
 Advanced web-based Age Calculator built using HTML, CSS, and JavaScript.
+
+## 🌐 Live Demo
+https://nadia-7-gm.github.io/CodeAlpha_AgeCalculator/
 
 ## Features
 - Real-time age calculation
